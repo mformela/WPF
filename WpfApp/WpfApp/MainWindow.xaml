@@ -9,7 +9,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition MinHeight="50"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,9 +37,28 @@
 
         </StackPanel>
 
+        <WrapPanel Grid.Row="1">
+            <Rectangle Margin="10" Width="50" Height="50" Fill="Aquamarine"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="BlanchedAlmond"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="DarkCyan"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="RosyBrown"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="Violet"></Rectangle>
+        </WrapPanel>
 
-        
-        
+        <UniformGrid Grid.Column="1" Grid.Row="1">
+            <Rectangle Margin="10" Width="50" Height="50" Fill="Aquamarine"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="BlanchedAlmond"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="DarkCyan"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="RosyBrown"></Rectangle>
+            <Rectangle Margin="10" Width="50" Height="50" Fill="Violet"></Rectangle>
+            
+        </UniformGrid>
+        <GridSplitter Grid.Row="1" Height="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Background="Red"  VerticalAlignment="Top"/>
+        <GridSplitter Grid.Column="1" Width="3" Grid.RowSpan="2" HorizontalAlignment="Left" Background="Red"  VerticalAlignment="Stretch"/>
+
+
+
+
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
