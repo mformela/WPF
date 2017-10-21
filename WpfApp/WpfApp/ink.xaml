@@ -8,13 +8,13 @@
         Title="ink" Height="300" Width="600">
 
     <DockPanel>
-        <StackPanel Margin="10">
+        <StackPanel Margin="{Binding Path=MarginCanvas}">
             <Button x:Name="x1" Content="Select" Padding="10" Click="x1_Click"/>
             <Button x:Name="x2" Content="Ink" Padding="10" Click="x2_Click"/>
         </StackPanel>
 
         <InkCanvas x:Name="InkCanvas" Margin="10"
-                  EditingMode="{Binding EditMode}"></InkCanvas>
+                  EditingMode="{Binding Path=EditMode}"></InkCanvas>
 
         </DockPanel>
 

@@ -33,10 +33,12 @@ namespace WpfApp
         private void x1_Click(object sender, RoutedEventArgs e)
         {
             edit.EditMode = InkCanvasEditingMode.Select;
+            edit.MarginCanvas = 40;
         }
         private void x2_Click(object sender, RoutedEventArgs e)
         {
             edit.EditMode = InkCanvasEditingMode.Ink;
+            edit.MarginCanvas = 10;
         }
     }
 }
