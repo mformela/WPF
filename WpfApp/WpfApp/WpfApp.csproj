@@ -73,6 +73,7 @@
     <Compile Include="ink.xaml.cs">
       <DependentUpon>ink.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InkCanvasEdMode.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
