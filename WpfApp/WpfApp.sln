@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesWPF", "Resources\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupBox_RadioButton", "GroupBox_RadioButton\GroupBox_RadioButton.csproj", "{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "konwertery", "WpfApplication2\konwertery.csproj", "{D23DE5E1-DA42-4E40-A21E-5B7F13552C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimateWindow", "AnimateWindow\AnimateWindow.csproj", "{80C1F493-4731-435D-A064-8A93EB915278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23DE5E1-DA42-4E40-A21E-5B7F13552C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23DE5E1-DA42-4E40-A21E-5B7F13552C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23DE5E1-DA42-4E40-A21E-5B7F13552C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23DE5E1-DA42-4E40-A21E-5B7F13552C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C1F493-4731-435D-A064-8A93EB915278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C1F493-4731-435D-A064-8A93EB915278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C1F493-4731-435D-A064-8A93EB915278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C1F493-4731-435D-A064-8A93EB915278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

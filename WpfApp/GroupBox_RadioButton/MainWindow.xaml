@@ -8,11 +8,25 @@
         Title="MainWindow" Height="350" Width="525">
 
     <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
         <Style TargetType="{x:Type ToggleButton}" x:Key="ankietaBtn">
             <Setter Property="Background" Value="DarkRed"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
+
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="Content" Value="Pokaż ankietę"/>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="Ukryj ankietę"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        
+        
+        
     </Window.Resources>
 
     <StackPanel>
@@ -36,9 +50,9 @@
             <!--TUTAJ TWORZYMY TOGGLEBUTTON, KTÓRY JEST POWIĄZANY Z RESZTĄ ANKIETY - KLIKAMY NA NIEGO I POKAZUJE NAM ANKIETĘ. TOOGLEBUTTON BINDING JEST USTAWIONY DOMYŚLNIE NA TWOWAY-->
 
             <ToggleButton x:Name="toggleAnkieta" IsChecked="{Binding ElementName=ankieta, Path=IsOpen}" Style="{StaticResource ankietaBtn}">Pokaż ankietę :)</ToggleButton>
-            <ToggleButton Content="OK"></ToggleButton>
+         
             <!--<Popup x:Name="ankieta" PlacementTarget="{Binding ElementName=toggleAnkieta}" PopupAnimation="Slide" AllowsTransparency="True">-->
-                <StackPanel Visibility="{Binding ElementName=toggleAnkieta, Path=IsChecked}">
+                <StackPanel Visibility="{Binding ElementName=toggleAnkieta, Path=IsChecked, Converter={StaticResource boolToVisibilityConverter}}">
 
                     <GroupBox Header="Ile godzin dziennie programujesz?">
                         <StackPanel>

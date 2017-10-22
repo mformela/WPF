@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GroupBox_RadioButton
+namespace konwertery
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,17 +24,5 @@ namespace GroupBox_RadioButton
         {
             InitializeComponent();
         }
-
-        //private void Window_SizeChanged (object sender, SizeChangedEventArgs e)
-        //{
-        //    ResetPopUp();
-        //}
-
-        //private void ResetPopUp()
-        //{
-        //    var offset = ankieta.HorizontalOffset;
-        //    ankieta.HorizontalOffset = offset;
-        //    ankieta.HorizontalOffset = offset;
-        //}
     }
 }
