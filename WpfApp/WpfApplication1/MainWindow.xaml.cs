@@ -30,11 +30,11 @@ namespace WpfApplication1
             throw new NotImplementedException();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string a = txtb.Text;
-            string b = txtn.Text;
-            MessageBox.Show(a + " " + b + " udało się!:)");
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string a = txtb.Text;
+        //    string b = txtn.Text;
+        //    MessageBox.Show(a + " " + b + " udało się!:)");
+        //}
     }
 }

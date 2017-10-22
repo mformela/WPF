@@ -1,69 +1,92 @@
-﻿<Window x:Class="WPFApp.MainWindow"
-
+﻿<Window x:Class="GeorgeOrwell.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
-        xmlns:local="clr-namespace:WPFApp"
-
+        xmlns:local="clr-namespace:GeorgeOrwell"
         mc:Ignorable="d"
+        
+        Title="Orwell" Height="400"  MaxWidth="350" Width="350" MinHeight="350" MinWidth="350" WindowStartupLocation="CenterScreen" Cursor="Hand" Icon="images/Orwell.jpg" ResizeMode="NoResize">
 
-        Title="MainWindow" Height="300" Width="600"  WindowStartupLocation="CenterScreen" WindowState="Maximized" ShowInTaskbar="False" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="green"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Background="Crimson" Padding="5" FontWeight="Black"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
 
-    <Grid Margin="10">
+        </Style>
 
+    </Window.Resources>
+
+    <Grid>
         <Grid.RowDefinitions>
-
+            <RowDefinition MinHeight="50" MaxHeight="50"></RowDefinition>
+            <RowDefinition MinHeight="200"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical">
-            <Button Margin="10" Content="Top Trumps Authors ==> GEORGE ORWELL" Background="#FFD91C1C" Click="Button_Click" Height="52"></Button>
-        </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="1">
-
-            <Image HorizontalAlignment="Center" Source="images\Orwell.jpg"/>
-
-            <Label>Writing style - 7</Label>
-            <Label Content="Charakerisation - 9"/>
-            <Label>Influence - 10</Label>
-            <Label>Readbility - 8</Label>
-
-        </StackPanel>
-
-        <WrapPanel Grid.Row="2" Height="100">
-            <TextBox Text="George Orwell's major works are 1984, a frightening portroyal of a totalitarian future state, and Animal Farm, an allegroy for the Russian revolution and its aftremath." TextWrapping="Wrap"></TextBox>
-        </WrapPanel>
-
-        
-
-       <Border Background="GhostWhite" BorderBrush="DodgerBlue" 
-
-                BorderThickness="1,3,1,5">
-
-            <Grid>
-
+        <Border Grid.Row="0">
+            <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="18,10,18,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-               
+                <ToggleButton IsChecked="{Binding ElementName=showinfo, Path=IsOpen}" Grid.Column="0" x:Name="btn1"  Content="Show info"  ></ToggleButton>
+                <CheckBox  Grid.Column="1" x:Name="chkBox" HorizontalAlignment="Center" Content="Enable editing" ></CheckBox>
 
-                
+            </Grid>
+        </Border>
+
+        <Border MaxWidth="300" Grid.Row="1" Background="GhostWhite" BorderBrush="Black" BorderThickness="1,1,1,1">
+            <Grid x:Name="jegoryj" Grid.Row="1" Margin="10" >
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="1,1,1,1">
+                        <Image Source="images\Orwell.jpg" HorizontalAlignment="Left"></Image>
+                    </Border>
+
+                    <GroupBox Header="Skills">
+                        <StackPanel VerticalAlignment="Center" Margin="10,0,0,0" >
+                            <Label FontStyle="Italic" HorizontalAlignment="Left" Content="Writing - 7"></Label>
+                            <Label FontStyle="Italic" HorizontalAlignment="Left" Content="Characterisation - 9"></Label>
+                            <Label FontStyle="Italic" HorizontalAlignment="Left" Content="Influence - 10"></Label>
+                            <Label FontStyle="Italic" HorizontalAlignment="Left" Content="Readbility - 8"></Label>
+
+                        </StackPanel>
+                    </GroupBox>
+                </WrapPanel>
 
             </Grid>
 
         </Border>
 
-    </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel>
+                <TextBox  x:Name="textbox" Margin="10,10,10,10" IsEnabled="{Binding ElementName=chkBox, Path=IsChecked}" Text="{Binding ElementName=info, Path=Text, Mode=TwoWay}"></TextBox>
+                <Popup  Width="300" Height="80" x:Name="showinfo" AllowsTransparency="True" PopupAnimation="Slide" PlacementTarget="{Binding ElementName=textbox}" >
+                    <TextBlock Padding="0,10,0,0"  Name="info" Visibility="Visible" FontStyle="Italic" TextWrapping="Wrap" Margin="10" Text="George Orwell, właściwie Eric Arthur Blair (ur. 25 czerwca 1903, zm. 21 stycznia 1950) – pisarz i publicysta angielski, uczestnik hiszpańskiej wojny domowej." FontFamily="Gill Sans MT"/>
+                </Popup>
+            </StackPanel>
+        </Grid>
 
+    </Grid>
 </Window>
+

@@ -25,6 +25,16 @@ namespace GroupBox_RadioButton
             InitializeComponent();
         }
 
+        private void Window_SizeChanged (object sender, SizeChangedEventArgs e)
+        {
+            ResetPopUp();
+        }
 
+        private void ResetPopUp()
+        {
+            var offset = ankieta.HorizontalOffset;
+            ankieta.HorizontalOffset = offset;
+            ankieta.HorizontalOffset = offset;
+        }
     }
 }
