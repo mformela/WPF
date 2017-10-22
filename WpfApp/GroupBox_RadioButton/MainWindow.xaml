@@ -6,7 +6,44 @@
         xmlns:local="clr-namespace:GroupBox_RadioButton"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+
+    <StackPanel>
+        <!--TUTAJ TWORZYMY TOGGLEBUTTON, KTÓRY JEST POWIĄZANY Z RESZTĄ ANKIETY - KLIKAMY NA NIEGO I POKAZUJE NAM ANKIETĘ. TOOGLEBUTTON BINDING JEST USTAWIONY DOMYŚLNIE NA TWOWAY-->
         
-    </Grid>
+        <ToggleButton x:Name="toggleAnkieta" IsChecked="{Binding ElementName=ankieta, Path=IsOpen}">Pokaż ankietę :) </ToggleButton>
+        <Popup x:Name="ankieta" PlacementTarget="{Binding ElementName=toggleAnkieta}" PopupAnimation="Slide" AllowsTransparency="True">
+            <StackPanel>
+
+                 <GroupBox Header="Ile godzin dziennie programujesz?">
+                        <StackPanel>
+                             <RadioButton Content="1h"></RadioButton>
+                             <RadioButton Content="2h"></RadioButton>
+                             <RadioButton Content="3h"></RadioButton>
+                         </StackPanel>
+                  </GroupBox>
+                
+                 <GroupBox Header="Ile godzin dziennie nic nie robisz?">
+                            <StackPanel>
+                                <RadioButton Content="1h"></RadioButton>
+                                <RadioButton Content="2h"></RadioButton>
+                                <RadioButton Content="6h"></RadioButton>
+                
+                <!--tutaj dodajemy guzik WIĘCEJ, który będzie aktywny tylko w momecie kiedy zaznaczymy go i mamy wówczas możliwość wpisywania rzeczy do textboxa-->
+                                <RadioButton x:Name="więcej">
+                                     <WrapPanel x:Name="test">
+                                     <Label>więcej:</Label>
+                        
+                            <!-- <TextBox MinWidth="100" VerticalContentAlignment="Center" IsEnabled="{Binding ElementName=więcej, Path=IsChecked}"/> -->
+                        <!--tutaj mamy nową rzecz POPUP - domyślnie ustawia box poniżej-->
+                                    <Popup IsOpen="{Binding ElementName=więcej, Path=IsChecked}" Placement="Right" PlacementTarget="{Binding ElementName=test}" PopupAnimation="Slide" AllowsTransparency="True">
+                                        <TextBox MinWidth="100" />
+                                    </Popup>
+                                    </WrapPanel>
+                                 </RadioButton>
+                            </StackPanel>
+                 </GroupBox>
+                
+        </StackPanel>
+    </Popup>
+  </StackPanel>
 </Window>

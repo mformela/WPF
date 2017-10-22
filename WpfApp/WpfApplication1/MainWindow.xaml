@@ -39,15 +39,8 @@
 
         </StackPanel>
 
-
-
-
-
         <WrapPanel Grid.Row="2" Height="100">
             <TextBox Text="George Orwell's major works are 1984, a frightening portroyal of a totalitarian future state, and Animal Farm, an allegroy for the Russian revolution and its aftremath." TextWrapping="Wrap"></TextBox>
-
-           
-
         </WrapPanel>
 
         
@@ -59,11 +52,8 @@
             <Grid>
 
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition></ColumnDefinition>
-
                     <ColumnDefinition></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
 
                

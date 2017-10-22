@@ -24,5 +24,7 @@ namespace GroupBox_RadioButton
         {
             InitializeComponent();
         }
+
+
     }
 }
