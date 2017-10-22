@@ -1,0 +1,37 @@
+﻿<Window x:Class="ResourcesWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResourcesWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    
+    
+    <Window.Resources> <!-- to słownik, który ma jakąś wartość i jakiś typ-->
+        <local:ValueContent x:Key="ValueContent" Vi="Visible" ColorRec="DarkCyan"/>
+        <!--Value Content value = new ValueContent() {Vi = "Visibile"};     to jest to samo co wyżej -->
+        <!--w tym local możemy wpisać też konkretne rzeczy:
+        <local:ValueContent x:Key="ValueContent" Vi="Visible" ColorRec="Blue"/>-->
+
+    </Window.Resources>
+
+    
+    <Grid>
+        <StackPanel>
+            <Button x:Name="Zmiana" Width="100" Content="Klikaj" Click="Zmiana_Click"></Button>
+            
+            <Rectangle Width="100" Height="100" 
+                   Fill="{Binding Path=ColorRec, Source={StaticResource ValueContent}}" Visibility="{Binding Path=Vi, Source={StaticResource ValueContent}}"/>
+            <!--Jeżeli chcemy zbindować się do jakiegoś innego elementu niż DataContext to używamy Source -> to znaczy inne źródło do bindowania. Często stosuje się to do styli-->
+
+        </StackPanel>
+    </Grid>
+
+    <!--tutaj jest inny zapis tego co wyżej -> ustalamy DataContext dla całości Gridu i wóczas nie trzeba podawać source dla każdej właściwości
+    <Grid DataContext="'{StaticResource ValueContent}">
+        <Rectangle Width="100" Height="100" 
+         Fill="{Binding Path=ColorRec}" Visibility="{Binding Path=Vi}"/>
+    </Grid>-->
+
+</Window>

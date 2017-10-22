@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerTemperatureWatcher", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orwell", "WpfApplication1\Orwell.csproj", "{D060A196-39BC-445F-AA6C-BA71E5A01978}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesWPF", "Resources\ResourcesWPF.csproj", "{D6A45446-3401-47F2-AA20-AA944AE5DAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupBox_RadioButton", "GroupBox_RadioButton\GroupBox_RadioButton.csproj", "{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{D060A196-39BC-445F-AA6C-BA71E5A01978}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D060A196-39BC-445F-AA6C-BA71E5A01978}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D060A196-39BC-445F-AA6C-BA71E5A01978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A45446-3401-47F2-AA20-AA944AE5DAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A45446-3401-47F2-AA20-AA944AE5DAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A45446-3401-47F2-AA20-AA944AE5DAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A45446-3401-47F2-AA20-AA944AE5DAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E8AE9D-99E6-44FD-9BB9-4D3BFA41B26A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
