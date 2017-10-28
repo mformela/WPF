@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:ItemSource"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+
+    <StackPanel>
+        <ItemsControl ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image x:Name="obrazek" Source="{Binding Path=PathOfImage}" Height="50"/>
+                        <TextBlock x:Name="info" Text="{Binding Path=NameOfImage}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsFound}" Value="False">
+                            <Setter Property="Source" Value="defualt.png" TargetName="obrazek"/>
+                            <Setter Property="Text" Value="Nie znaleziono obrazka" TargetName="info"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                    
+                    
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
 </Window>
