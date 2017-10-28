@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemSource", "ItemSources\I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagesUserControl", "ImagesUserControl\ImagesUserControl.csproj", "{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyProperty", "DependencyProperty\DependencyProperty.csproj", "{3403755E-94EB-4C34-ADDD-1CFC278B0E4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OurDependencyProperty", "DependencyProperty\OurDependencyProperty.csproj", "{3403755E-94EB-4C34-ADDD-1CFC278B0E4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

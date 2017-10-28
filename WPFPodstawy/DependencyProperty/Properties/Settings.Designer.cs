@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DependencyProperty.Properties
+namespace OurDependencyProperty.Properties
 {
 
 
