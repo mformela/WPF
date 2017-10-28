@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationEvents", "WPFPodstawy\ReservationEvents.csproj", "{93BDE3DA-284E-4DC2-B1E5-CF25C8B10F54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemSource", "ItemSources\ItemSource.csproj", "{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{93BDE3DA-284E-4DC2-B1E5-CF25C8B10F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93BDE3DA-284E-4DC2-B1E5-CF25C8B10F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93BDE3DA-284E-4DC2-B1E5-CF25C8B10F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
