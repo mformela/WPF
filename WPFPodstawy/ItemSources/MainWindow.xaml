@@ -25,7 +25,7 @@
 
                         <DataTemplate.Triggers>
                             <DataTrigger Binding="{Binding Path=IsFound}" Value="False">
-                                <Setter Property="Source" Value="{Binding Path=PropOfImage}" TargetName="obrazek"/>
+                                <Setter Property="Source" Value="defualt.png" TargetName="obrazek"/>
                                 <Setter Property="Text" Value="{Binding Path=PropOfImage}" TargetName="info"/>
                             </DataTrigger>
                         </DataTemplate.Triggers>
