@@ -1,5 +1,4 @@
-﻿using ItemSources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ItemSource
+namespace ImagesUserControl
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,21 +23,6 @@ namespace ItemSource
         public MainWindow()
         {
             InitializeComponent();
-
-
-            //tutaj tworzymy listę, zmienną generyczną
-            List<OurImage> images = new List<OurImage>()
-            {
-                new OurImage()
-
-            };
-            
-            images.Add(new OurImage("user.png", "user"));
-            images.Add(new OurImage("test.png", "user"));
-            images.Add(new OurImage("user.png", "user"));
-            images.Add(new OurImage("asd.png", "user"));
-
-            this.DataContext = images; //this odwołuje się do Window
         }
     }
 }

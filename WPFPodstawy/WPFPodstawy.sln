@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationEvents", "WPFPod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemSource", "ItemSources\ItemSource.csproj", "{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagesUserControl", "ImagesUserControl\ImagesUserControl.csproj", "{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F0F0EF-31AD-4FE7-B8C4-EA26264E0E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7439EF-3D1E-46E3-9BA8-71838C01BE70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
