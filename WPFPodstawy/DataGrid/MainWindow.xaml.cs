@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,78 @@ namespace DataGrid
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    
     public partial class MainWindow : Window
     {
+        ObservableCollection<PersonData> dataGridPerson = new ObservableCollection<PersonData>();
         public MainWindow()
         {
             InitializeComponent();
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Maciek",
+                Age = 24,
+                Email = "asd@asd.pl",
+                IsSubscribedToNewsletter = true,
+                Website = new Uri("http://mila.com"),
+                Image = "user.png",
+                Decsription = "To jest wino"
+            }
+           );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Ola",
+                Age = 224,
+                Email = "asd@asd.pl",
+                IsSubscribedToNewsletter = false,
+            }
+            );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Konrad",
+                Age = 249,
+                Email = "asd@asldkpaosjd.pl"
+            }
+            );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Aleks",
+                Age = 29,
+                Email = "asd@asldkpaosjd.pl"
+            }
+            );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Konrad",
+                Age = 249,
+                Email = "asd@asldkpaosjd.pl"
+            }
+            );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Konrad",
+                Age = 249,
+                Email = "asd@asldkpaosjd.pl"
+            }
+            );
+
+            dataGridPerson.Add(new PersonData()
+            {
+                Name = "Konrad",
+                Age = 249,
+                Email = "asd@asldkpaosjd.pl"
+            }
+            );
+
+            dataGridPeople.ItemsSource = dataGridPerson;
+
         }
     }
 }

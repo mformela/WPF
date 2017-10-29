@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:DataGrid"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <DataGrid x:Name="dataGridPeople" 
+                  SelectionMode="Extended" 
+                  SelectionUnit="Cell" 
+                  AlternatingRowBackground="BurlyWood" 
+                  AlternationCount="2"
+                  FrozenColumnCount="1"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background" Value="Azure"/>
+
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Newsletter" Binding="{Binding Path=IsSubscribedToNewsletter}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+    </StackPanel>
 </Window>
