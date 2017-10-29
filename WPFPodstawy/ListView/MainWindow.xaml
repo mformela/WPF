@@ -24,31 +24,36 @@
 
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                
+
                     <GridView.Columns>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="100"/>
                         <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=Age}" Width="80"/>
-                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}" Width="200"/>
+                        <GridViewColumn Header="Email" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Email}" Foreground="Blue" TextDecorations="Underline"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
 
         <WrapPanel>
-            <Label>Name: </Label>
+            <Label>Name:</Label>
             <TextBox Width="100" x:Name="NameToAdd"></TextBox>
-            <Label> Age: </Label>
+            <Label>Age:</Label>
             <TextBox Width="100" x:Name="AgeToAdd"></TextBox>
-            <Label>Email: </Label>
+            <Label>Email:</Label>
             <TextBox Width="100" x:Name="EmailToAdd"></TextBox>
 
-            <Button Click="Button_Click">Submit</Button>
-
-           
-
+            <Button Click="Button_Click" FontWeight="Bold" HorizontalAlignment="Center" Background="#FFE0B7B7" BorderThickness="3,3,3,0">Submit</Button>
         </WrapPanel>
-
-
-
+        <StackPanel>
+            <Button x:Name="btnDelete" Content="Delete" Click="btnDelete_Click" Width="50" HorizontalAlignment="Right" Margin="20"/>
+        </StackPanel>
     </StackPanel>
+
+
 </Window>

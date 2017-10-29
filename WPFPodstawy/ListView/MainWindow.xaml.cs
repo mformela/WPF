@@ -63,15 +63,27 @@ namespace ListView
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             
                 listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = Convert.ToInt32(AgeToAdd.Text), Email = Regex.IsMatch(EmailToAdd.Text, pattern) ? EmailToAdd.Text : string.Empty });
           
-
                 //inna wersja:
                // listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = int.TryParse (AgeToAdd.Text, out var num) ? num : 0, Email = EmailToAdd.Text });
-            
         }
+
+
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            int selectedNameIndex = listaImion.SelectedIndex;
+            if (selectedNameIndex != -1)
+            {
+                listOfPeople.RemoveAt(selectedNameIndex);
+            }
+        }
+
+
+
     }
     
 }
