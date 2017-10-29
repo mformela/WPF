@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +25,30 @@ namespace ListView
     {
         
             ObservableCollection<PersonData> listOfPeople = new ObservableCollection<PersonData>();
+
+
+        //jak zrobić regex na maila
+        string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+
+
+            // inna wersja regexa na maila
+        //public bool IsValid(string emailaddress)
+        //{
+        //    try
+        //    {
+        //        MailAddress m = new MailAddress(emailaddress);
+
+        //        return true;
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,13 +64,13 @@ namespace ListView
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //if (!string.IsNullOrWhiteSpace(NameToAdd.Text)) //to jest funkcja, która wyklucza możliwość wpisywania białych znaków oraz możliwości wstawiania pustych 
-            //{
-                listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = Convert.ToInt32(AgeToAdd.Text), Email = EmailToAdd.Text });
+            
+                listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = Convert.ToInt32(AgeToAdd.Text), Email = Regex.IsMatch(EmailToAdd.Text, pattern) ? EmailToAdd.Text : string.Empty });
+          
 
-            //inna wersja:
-            //listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = int.TryParse (AgeToAdd.Text, out var num) ? num : 0, Email = EmailToAdd.Text });
-
+                //inna wersja:
+               // listOfPeople.Add(new PersonData() { Name = NameToAdd.Text, Age = int.TryParse (AgeToAdd.Text, out var num) ? num : 0, Email = EmailToAdd.Text });
+            
         }
     }
     
