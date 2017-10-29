@@ -6,7 +6,49 @@
         xmlns:local="clr-namespace:ListView"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="listaImion">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </GridView.ColumnHeaderTemplate>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="Padding" Value="5"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="FontWeight" Value="Black"/>
+
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                
+                    <GridView.Columns>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="100"/>
+                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=Age}" Width="80"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}" Width="200"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <WrapPanel>
+            <Label>Name: </Label>
+            <TextBox Width="100" x:Name="NameToAdd"></TextBox>
+            <Label> Age: </Label>
+            <TextBox Width="100" x:Name="AgeToAdd"></TextBox>
+            <Label>Email: </Label>
+            <TextBox Width="100" x:Name="EmailToAdd"></TextBox>
+
+            <Button Click="Button_Click">Submit</Button>
+
+           
+
+        </WrapPanel>
+
+
+
+    </StackPanel>
 </Window>
