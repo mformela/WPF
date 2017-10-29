@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <ListView x:Name="listaImion">
+        <ListView x:Name="listaImion" SelectionChanged="listaImion_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.ColumnHeaderTemplate>
@@ -26,8 +26,16 @@
                     </GridView.ColumnHeaderContainerStyle>
 
                     <GridView.Columns>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="100"/>
-                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=Age}" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="100">
+                            <GridViewColumnHeader Click="GridViewColumnHeader_Click">
+                                Name
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Age}" Width="80">
+                            <GridViewColumnHeader Click="GridViewColumnHeader_Click">
+                                Age
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
                         <GridViewColumn Header="Email" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

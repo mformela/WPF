@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -52,9 +53,14 @@ namespace ListView
         public MainWindow()
         {
             InitializeComponent();
-            listOfPeople.Add(new PersonData() { Name = "Anna", Age = 20, Email = "anna@gmail.com" });
+            
             listOfPeople.Add(new PersonData() { Name = "Łukasz", Age = 30, Email = "lukasz198@gmail.com" });
-            listOfPeople.Add(new PersonData() { Name = "Krysia", Age = 20, Email = "krysialol@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Krysia", Age = 26, Email = "krysialol@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Krysia", Age = 24, Email = "krysialol@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Anna", Age = 20, Email = "anna@gmail.com" });
+            listOfPeople.Add(new PersonData() { Name = "Warol", Age = 20, Email = "karol@wp.pl" });
+            listOfPeople.Add(new PersonData() { Name = "Aneta", Age = 200, Email = "maciek@wp.pl" });
+            listOfPeople.Add(new PersonData() { Name = "Marta", Age = 25, Email = "marta@wp.pl" });
 
             listaImion.ItemsSource = listOfPeople;
 
@@ -75,15 +81,65 @@ namespace ListView
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             
-            int selectedNameIndex = listaImion.SelectedIndex;
-            if (selectedNameIndex != -1)
+            // zmienione, żeby móc usuwać wybrane rzeczy z listy (nie po indexie jak poprzednio, tylko według zaznaczenia)
+            var selectedItem = (PersonData)listaImion.SelectedItem;
+            if (selectedItem != null)
             {
-                listOfPeople.RemoveAt(selectedNameIndex);
+                listOfPeople.Remove(selectedItem);
             }
         }
 
+        private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader header = (sender as GridViewColumnHeader);
+            string columnNameToSort = header.Content.ToString();
+
+            //if (header != null)
+            //{
+            //    columnNameToSort = header.Content.ToString();
+            //}
 
 
+            var howToSort = ListSortDirection.Ascending;
+
+
+            // to spina nam to całe sortowanie. pobieramy sobie widok listy imion
+            // (CollectionView) -> wymuszamy - nie robi to automatycznie, robimy tutaj konwersję 
+            // inny zapis: CollectionView view = CollectionViewSource.GetDefaultView(listaImion.ItemsSource) as CollectionView;
+            CollectionView view = (CollectionView) CollectionViewSource.GetDefaultView(listaImion.ItemsSource);
+
+            //jeśli kliknę raz to sortuje w jedną stronę, a jeśli drugi raz to posortuje w odwrotny sposób
+            if(view.SortDescriptions.Any())
+            {
+                SortDescription item = view.SortDescriptions.ElementAt(0); // pobieramy elementy 
+                if(columnNameToSort == item.PropertyName.ToString())
+                    {
+                        if(item.Direction == ListSortDirection.Ascending)
+                            {
+                                howToSort = ListSortDirection.Descending;
+                            }
+                        else
+                            {
+                                howToSort = ListSortDirection.Ascending;
+                            }
+
+                    }
+            }
+
+
+            
+            view.SortDescriptions.Clear(); // to umożliwia nam sortowanie -> czyści nam za każdym razem
+                                           //jeśli zostawimy clear to nie zostawia nam posortowanej pierwszej kolumny - resetuje sortowanie 
+                                           // jeśli usuniemy clear to sortuje nam jedną kolumnę a do niej sortuje drugą, tak że sortowanie z pierwszej pozostaje aktywne 
+            view.SortDescriptions.Add(new SortDescription(columnNameToSort, howToSort));
+            // 0 oznacza rosnący, 1 malejący można to zamiast ListSortDirection
+            //view.SortDescriptions.Add(new SortDescription(columnNameToSort, 0));
+        }
+
+        private void listaImion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
     
 }
